@@ -50,11 +50,16 @@ body {
     justify-items: center;
 }
 
+.grid-item a {
+    display: block; /* Make the anchor tag block-level to fit the image */
+    width: 100%; /* Ensure the anchor tag takes full width of its container */
+}
+
 .grid-item img {
     width: 300px;
     height: 300px;
     border-radius: 15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for box-shadow as well */
 }
 
 .grid-item img:hover {
@@ -116,20 +121,78 @@ body {
         <br>
         <br>
         <div class="grid">
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/burgeria_small.jpg" alt="Burgeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/cheeseria_small.jpg" alt="Cheeseria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/cupcakeria_small.jpg" alt="Cupcakeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/donuteria_small.jpg" alt="Donuteria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/freezeria_small.jpg" alt="Freezeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/hotdoggeria_small.jpg" alt="Hotdoggeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pancakeria_small.jpg" alt="Pancakeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pastaria_small.jpg" alt="Pastaria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pizzeria_small.jpg" alt="Pizzeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/scooperia_small.jpg" alt="Scooperia"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/sushiria_small.jpg" alt="Sushiria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/tacomia_small.jpg" alt="Tacomia"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/wingeria_small.jpg" alt="Wingeria"></div>
-            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/bakeria_small.jpg" alt="Bakeria"></div>
+<div class="grid">
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/burgeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/burgeria_small.jpg" alt="Burgeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/cheeseria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/cheeseria_small.jpg" alt="Cheeseria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/cupcakeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/cupcakeria_small.jpg" alt="Cupcakeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/donuteria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/donuteria_small.jpg" alt="Donuteria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/freezeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/freezeria_small.jpg" alt="Freezeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/hotdoggeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/hotdoggeria_small.jpg" alt="Hotdoggeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/pancakeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/pancakeria_small.jpg" alt="Pancakeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/pastaria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/pastaria_small.jpg" alt="Pastaria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/pizzeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/pizzeria_small.jpg" alt="Pizzeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/scooperia" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/scooperia_small.jpg" alt="Scooperia">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/sushiria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/sushiria_small.jpg" alt="Sushiria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/tacomia" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/tacomia_small.jpg" alt="Tacomia">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/wingeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/wingeria_small.jpg" alt="Wingeria">
+        </a>
+    </div>
+    <div class="grid-item">
+        <a href="https://fytg.space/papas/bakeria" target="_blank">
+            <img src="https://fytg.space/papas/thumbs/bakeria_small.jpg" alt="Bakeria">
+        </a>
+    </div>
+</div>
         </div>
     </div>
     <canvas id="particle-canvas"></canvas>
