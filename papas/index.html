@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fytg.space | papas games</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+        
       * {
     margin: 0;
     padding: 0;
@@ -12,11 +14,25 @@
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    animation: fadeIn 3s ease-in-out;
 }
 
+              h1 {
+        font-size: 3em;
+        background: linear-gradient(45deg, #00FF87, #60AFFF, #A94FF9);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      p {
+        font-size: 1.2em;
+        color: #888;
+        margin-top: 20px;
+      }
+        
 .container {
     text-align: center;
     padding: 20px;
@@ -45,27 +61,137 @@ body {
     transform: scale(1.05);
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
 }
+
+                      .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .splash-screen img {
+            width: 150px;
+            height: auto;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.7s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      #particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
     </style>
 </head>
 <body>
+                <div class="splash-screen">
+        <img src="https://fytg.space/signature.gif" alt="Loading...">
+    </div>
     <div class="container">
-        <h1 class="title">All Papa's Games</h1>
+        <h1>All Papa's Games</h1>
+        <p>No ads, no distractions, no bullshit. Just plain games.</p>
         <div class="grid">
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 1"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 2"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 3"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 4"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 5"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 6"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 7"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 8"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 9"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 10"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 11"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 12"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 13"></div>
-            <div class="grid-item"><img src="https://via.placeholder.com/300" alt="Game 14"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/burgeria_small.jpg" alt="Burgeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/cheeseria_small.jpg" alt="Cheeseria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/cupcakeria_small.jpg" alt="Cupcakeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/donuteria_small.jpg" alt="Donuteria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/freezeria_small.jpg" alt="Freezeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/hotdoggeria_small.jpg" alt="Hotdoggeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pancakeria_small.jpg" alt="Pancakeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pastaria_small.jpg" alt="Pastaria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/pizzeria_small.jpg" alt="Pizzeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/scooperia_small.jpg" alt="Scooperia"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/sushiria_small.jpg" alt="Sushiria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/tacomia_small.jpg" alt="Tacomia"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/wingeria_small.jpg" alt="Wingeria"></div>
+            <div class="grid-item"><img src="https://fytg.space/papas/thumbs/bakeria_small.jpg" alt="Bakeria"></div>
         </div>
     </div>
+    <canvas id="particle-canvas"></canvas>
+            <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', () => {
+            // Show the splash screen for 2 seconds
+            setTimeout(() => {
+                // Add fade-out effect
+                document.querySelector('.splash-screen').classList.add('fade-out');
+                
+                // Display the main content after the splash screen fades out
+                setTimeout(() => {
+                    document.querySelector('.splash-screen').style.display = 'none';
+                }, 400); // Match the fade-out duration
+            }, 2000);
+        });
+    </script>
+        <script>
+      const particleCount = 60;
+const particleSize = 4;
+const particleSpeed = 0.2;
+const particleColor = '#FFFFFF';
+
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for (let i = 0; i < particleCount; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * particleSize,
+        speed: Math.random() * particleSpeed + 0.1,
+        angle: Math.random() * Math.PI * 2
+    });
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(particle => {
+        const vx = Math.cos(particle.angle) * particle.speed;
+        const vy = Math.sin(particle.angle) * particle.speed;
+
+        particle.x += vx;
+        particle.y += vy;
+
+        if (particle.x < 0 || particle.x > canvas.width || particle.y < 0 || particle.y > canvas.height) {
+            particle.x = Math.random() * canvas.width;
+            particle.y = Math.random() * canvas.height;
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = particleColor;
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fill();
+    });
+}
+
+animate();
+    </script>
 </body>
 </html>
