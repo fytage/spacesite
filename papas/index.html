@@ -45,29 +45,16 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px; /* Adjust this value if needed */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     justify-items: center;
-    align-items: center;
-    margin: 0 auto; /* Center the grid container */
-    max-width: 1200px; /* Optional: Limit the maximum width of the grid container */
-}
-
-.grid-item {
-    display: flex; /* Ensure grid items use flexbox to center content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-}
-
-.grid-item a {
-    display: block; /* Make anchor tag block-level */
 }
 
 .grid-item img {
     width: 300px;
     height: 300px;
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for box-shadow as well */
+    transition: transform 0.3s ease;
 }
 
 .grid-item img:hover {
@@ -123,12 +110,10 @@ body {
                 <div class="splash-screen">
         <img src="https://fytg.space/signature.gif" alt="Loading...">
     </div>
-    <div class="container">
         <h1>All Papa's Games</h1>
         <p>No ads, no distractions, no bullshit. Just plain games.</p>
         <br>
         <br>
-        <div class="grid">
 <div class="grid">
     <div class="grid-item">
         <a href="https://fytg.space/papas/burgeria" target="_blank">
@@ -199,9 +184,6 @@ body {
         <a href="https://fytg.space/papas/bakeria" target="_blank">
             <img src="https://fytg.space/papas/thumbs/bakeria_small.jpg" alt="Bakeria">
         </a>
-    </div>
-</div>
-        </div>
     </div>
     <canvas id="particle-canvas"></canvas>
             <script>
