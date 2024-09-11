@@ -1,24 +1,24 @@
-<html>
-  <head>
-    <title>fytg.space | papas burgeria</title>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <script>
-      // Adjust the size of the game to fit the user's screen
-      window.onload = function() {
-        var embedElement = document.getElementById('gameEmbed');
-        embedElement.width = window.innerWidth;
-        embedElement.height = window.innerHeight;
-      };
-    </script>
-  </head>
-  <body style="margin:0; overflow:hidden;">
-    <!-- The Ruffle container for emulating Flash -->
-    <div id="gameContainer">
-      <object id="gameEmbed" data="https://fytg.space/papas/burgeria/papasburgeria.swf" type="application/x-shockwave-flash" width="100%" height="100%">
-        <param name="allowScriptAccess" value="always">
-        <!-- Fallback message if Ruffle/Flash fails -->
-        <p>It seems Flash content cannot be loaded. Please try using a Flash emulator like <a href="https://ruffle.rs/">Ruffle</a>.</p>
-      </object>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fytg.space | papas burgeria</title>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+  <div id="game-container" style="width: 100vw; height: 100vh;"></div>
+
+  <script>
+    // Load Ruffle player
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+    document.getElementById("game-container").appendChild(player);
+
+    // Load the SWF
+    player.load("https://fytg.space/papas/burgeria/papasburgeria.swf").catch((e) => {
+      console.error("Failed to load SWF file:", e);
+    });
+  </script>
+</body>
 </html>
