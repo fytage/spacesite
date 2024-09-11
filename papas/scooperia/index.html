@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fytg.space | papas burgeria</title>
+  <meta property="og:title" content="🍔 Papa's Games | Burgeria 🍔" />
+  <meta property="og:description" content="Papa's Burgeria. No bullshit. Just the game." />
+  <meta property="og:image" content="https://fytg.space/papas/thumbs/burgeria_big.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🍔 Papa's Games | Burgeria 🍔" />
+  <meta name="twitter:description" content="Papa's Burgeria. No bullshit. Just the game." />
+  <meta name="twitter:image" content="https://fytg.space/papas/thumbs/burgeria_big.jpg" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <object id="game-container" style="width: 100vw; height: 100vh;">
+    <embed id="gameEmbed" src="/papas/burgeria/papasburgeria.swf" />
+  </object>
+
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  
+  <script>
+    // Adjust embed size to fit window
+    function resizeGame() {
+      var embedElement = document.getElementById('gameEmbed');
+      embedElement.width = window.innerWidth;
+      embedElement.height = window.innerHeight;
+    }
+
+    // Initial resize
+    resizeGame();
+
+    // Adjust size on window resize
+    window.onresize = resizeGame;
+  </script>
+</body>
+</html>
