@@ -45,14 +45,22 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; /* Adjust this value if needed */
     justify-items: center;
+    align-items: center;
+    margin: 0 auto; /* Center the grid container */
+    max-width: 1200px; /* Optional: Limit the maximum width of the grid container */
+}
+
+.grid-item {
+    display: flex; /* Ensure grid items use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
 .grid-item a {
-    display: block; /* Make the anchor tag block-level to fit the image */
-    width: 100%; /* Ensure the anchor tag takes full width of its container */
+    display: block; /* Make anchor tag block-level */
 }
 
 .grid-item img {
