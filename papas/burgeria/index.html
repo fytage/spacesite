@@ -4,21 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>fytg.space | papas burgeria</title>
-  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body>
-  <div id="game-container" style="width: 100vw; height: 100vh;"></div>
+  <body>
+    <object>
+        <embed src="/papas/burgeria/papasburgeria.swf" width="550" height="400" />
+    </object>
 
-  <script>
-    // Load Ruffle player
-    const ruffle = window.RufflePlayer.newest();
-    const player = ruffle.createPlayer();
-    document.getElementById("game-container").appendChild(player);
-
-    // Load the SWF
-    player.load("https://fytg.space/papas/burgeria/papasburgeria.swf").catch((e) => {
-      console.error("Failed to load SWF file:", e);
-    });
-  </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</body>
 </body>
 </html>
