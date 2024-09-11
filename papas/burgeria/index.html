@@ -18,9 +18,46 @@
       height: 100%;
       overflow: hidden;
     }
+
+                          .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .splash-screen img {
+            width: 150px;
+            height: auto;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.7s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
   </style>
 </head>
 <body>
+                  <div class="splash-screen">
+        <img src="https://fytg.space/signature.gif" alt="Loading...">
+    </div>
   <object id="game-container" style="width: 100vw; height: 100vh;">
     <embed id="gameEmbed" src="/papas/actualgames/papasburgeria.swf" />
   </object>
@@ -41,5 +78,20 @@
     // Adjust size on window resize
     window.onresize = resizeGame;
   </script>
+              <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', () => {
+            // Show the splash screen for 2 seconds
+            setTimeout(() => {
+                // Add fade-out effect
+                document.querySelector('.splash-screen').classList.add('fade-out');
+                
+                // Display the main content after the splash screen fades out
+                setTimeout(() => {
+                    document.querySelector('.splash-screen').style.display = 'none';
+                }, 400); // Match the fade-out duration
+            }, 10000);
+        });
+    </script>
 </body>
 </html>
