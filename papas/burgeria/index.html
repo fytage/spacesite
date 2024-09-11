@@ -1,8 +1,24 @@
 <html>
   <head>
     <title>fytg.space | papas burgeria</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+      // Adjust the size of the game to fit the user's screen
+      window.onload = function() {
+        var embedElement = document.getElementById('gameEmbed');
+        embedElement.width = window.innerWidth;
+        embedElement.height = window.innerHeight;
+      };
+    </script>
   </head>
-  <body>
-    <embed src="https://fytg.space/papas/burgeria/papasburgeria.swf"></embed>
+  <body style="margin:0; overflow:hidden;">
+    <!-- The Ruffle container for emulating Flash -->
+    <div id="gameContainer">
+      <object id="gameEmbed" data="https://fytg.space/papas/burgeria/papasburgeria.swf" type="application/x-shockwave-flash" width="100%" height="100%">
+        <param name="allowScriptAccess" value="always">
+        <!-- Fallback message if Ruffle/Flash fails -->
+        <p>It seems Flash content cannot be loaded. Please try using a Flash emulator like <a href="https://ruffle.rs/">Ruffle</a>.</p>
+      </object>
+    </div>
   </body>
 </html>
