@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>fytg.space</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+      
+      body {
+        background-color: black;
+        color: white;
+        font-family: 'Orbitron', sans-serif;
+        text-align: center;
+        margin-top: 20%;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      h1 {
+        font-size: 3em;
+        background: linear-gradient(45deg, #00FF87, #60AFFF, #A94FF9);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glitch 1.5s infinite;
+      }
+
+      p {
+        font-size: 1.2em;
+        color: #888;
+        margin-top: 20px;
+      }
+
+      @keyframes glitch {
+        0%, 100% { transform: none; }
+        33% { transform: skew(2deg, 0deg); }
+        66% { transform: skew(-2deg, 0deg); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>fytg.space</h1>
+    <p>This site gets used for some random stuff and projects.<br> You need to come here with a valid subdirectory URL, eg. /hello</p>
+  </body>
+</html>
