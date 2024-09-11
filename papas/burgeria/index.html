@@ -4,14 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>fytg.space | papas burgeria</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-  <body>
-    <object>
-        <embed src="/papas/burgeria/papasburgeria.swf" width="550" height="400" />
-    </object>
+  <object id="game-container" style="width: 100vw; height: 100vh;">
+    <embed id="gameEmbed" src="/papas/burgeria/papasburgeria.swf" />
+  </object>
 
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-</body>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  
+  <script>
+    // Adjust embed size to fit window
+    function resizeGame() {
+      var embedElement = document.getElementById('gameEmbed');
+      embedElement.width = window.innerWidth;
+      embedElement.height = window.innerHeight;
+    }
+
+    // Initial resize
+    resizeGame();
+
+    // Adjust size on window resize
+    window.onresize = resizeGame;
+  </script>
 </body>
 </html>
