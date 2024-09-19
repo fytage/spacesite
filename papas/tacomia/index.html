@@ -18,9 +18,23 @@
       height: 100%;
       overflow: hidden;
     }
+
+    #fullscreenBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px 15px;
+      background-color: #ff8800;
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
+  <button id="fullscreenBtn">Go Fullscreen</button>
+  
   <object id="game-container" style="width: 100vw; height: 100vh;">
     <embed id="gameEmbed" src="/papas/actualgames/papastacomia.swf" />
   </object>
@@ -35,11 +49,26 @@
       embedElement.height = window.innerHeight;
     }
 
+    // Fullscreen function
+    function toggleFullscreen() {
+      var elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
     // Initial resize
     resizeGame();
 
     // Adjust size on window resize
     window.onresize = resizeGame;
+
+    // Fullscreen button event listener
+    document.getElementById('fullscreenBtn').addEventListener('click', toggleFullscreen);
   </script>
 </body>
 </html>
